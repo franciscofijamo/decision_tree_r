@@ -5,6 +5,7 @@ library(rpart)
 
 library(rpart.plot)
 ?rpart
+library(rattle)
 
 clima <- expand.grid(Tempo = c("Assolarado", "Nublado", "Chuvoso"),
                      Tempertatura = c("Quente", "Ameno", "Frio"),
@@ -40,3 +41,7 @@ modelo_tennis_tree
 
 # contruindo visualizacao
 prp(modelo_tennis_tree, type = 0, extra = 1, under = TRUE, compress = TRUE)
+
+
+# visualizando com rattle
+fancyRpartPlot(modelo_tennis_tree)
